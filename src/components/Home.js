@@ -1,9 +1,11 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Home() {
+  let navigate = useNavigate()
+
   return (
     <>
-      <h1>這是一個首頁</h1>
+      <h1>首頁內文</h1>
       <p>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum,
         voluptatem voluptate repudiandae ratione atque veritatis? Labore sint
@@ -22,7 +24,8 @@ function Home() {
         <li>Saturday</li>
       </ul>
       {/* 透過 Link 連接到 /about */}
-      <Link to="/about">關於我</Link>
+      {/* <Link to="/about">關於我</Link> */}
+      <button onClick={(e) => { navigate("/about"); }}>關於我</button>
     </>
   );
 }
